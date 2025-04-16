@@ -1,0 +1,5 @@
+I = imread('\images\lenna.jpg');
+h1 = histogram(I);
+J = brightness(I,50);
+h2 = histogram(J);
+
