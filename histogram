@@ -1,0 +1,16 @@
+function h = histogram(I)
+if length(size(I)) == 3
+   I = rgb2gray(I);
+end
+h = zeros(1256);
+[row,col] = size(I);
+for x = 1:row
+    for y = 1:col
+        a = I(x,y);
+        h(a+1) = h(a+1)+1; % (a+1)for mapping
+    end
+end
+I = imread('.\images\lenna.jpeg');
+h = histogram(I);
+subplot(1,2,1);imshow(rgb2gray(I));
+hold on; subplot(1,2,2); plot(h);
